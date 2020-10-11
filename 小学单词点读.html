@@ -1,6 +1,6 @@
 <html>
 <meta http-equiv="content-Type" content="text/html; charset=UTF-8" />
-<head><title>单词点读</title>
+<head><title>小学单词</title>
 <style>
 	a{ text-decoration:none}
 	a:hover{ text-decoration:none}
@@ -10,8 +10,19 @@
 	    border-right: 0px;      /*1px solid #999;*/
 	    border-bottom: 1px solid #999;
 	    border-spacing: 0px; /*去掉单元格间隙*/
-
+	    padding-left: 10px;
+	    padding-right: 10px;
 	}
+</style>
+<style>
+	body{margin: 0 auto;color:black;}       /*  body{margin: 0 auto;color:#F6F6F6;}*/
+	/*注：t1的宽度是100%跟其他div的宽度不同，如果分辨率高于1100宽度的时候，t1会突出来，这是你原先代码的。*/
+	/*position:fixed;这个fixed属性为块状，他跟absolute一样，不会独占一行。z-index: 2;属性就是让他显示在其他div的上层*/
+	.t1{position:fixed; width:100%; height:35px; background: white;z-index: 2;display: inline-blocked;}
+	.t2{width:100%;height:auto;background:white;}
+	.t3{width:100%;height:auto;background:white;}   /* .t3{width:1100px;height:100px;background:#5577FF;} */
+	/*t01的position: relative;这个是独占一行的属性，在这里相当于占位符的作用。height: 50px;这里的50像素高度要等于t1的高度。background:none;背景设置成空白或者透明，这里设不设置都没关系，因为他没有加z-index这个属性，他默认的属性为0，即显示在t1图层的下面*/
+	.t01{position: relative;height: 50px;background:none;}
 </style>
 </head>
 <script type="text/javascript">
@@ -23,7 +34,23 @@
 </SCRIPT>
 
 <body>
-<center><h3>单词点读</h3></center>
+<div class="t1"; align="center">
+	<table><tr>
+		<td><a href="index.htm">首页</a></td>
+		<td><a href="自然拼读字符.html">自然拼读</a></td>
+		<td><a href="小学单词点读.html">小学单词</a></td>
+		<td><a href="小学英语美文.html">小学美文</a></td>
+		<td><a href="牛津上海版六上.html">牛津上六</a></td>
+		<td><a href="新世纪六上.html">新世纪六</a></td>
+		<td><a href="汇总-字母顺序.html">小初汇总</a></td>
+		<td><a href="初中单词.html">初中单词</a></td>
+		<td><a href="初中单词 - 字母顺序.html">初中字序</a></td>
+	</tr></table>
+</div>
+<div class="t01"></div>
+<div class="t2">
+<center><h3>Alphabet</h3></center>
+<center><h3>小学单词</h3></center>
 
 <center>
 <table>
@@ -751,6 +778,6 @@
 
 
 </center>
-
-<center>balabala</center>
+</div>
+<div class="t3"; align="center">&copy;<a href="">沈阳喜乐汇文化传媒有限公司</a>®</div><br>
 </body></html>
