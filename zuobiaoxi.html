@@ -42,7 +42,7 @@
         var NUM_HORIZONTAL_TICKS = AXIS_WIDTH / a;
         var TICK_WIDTH = 10;
          //标牌和坐标轴之间的距离
-        var SPACE_BETWEEN_ABELS_AND_AXIS = 20;
+        var SPACE_BETWEEN_ABELS_AND_AXIS = 10;
  
 
 
@@ -66,7 +66,7 @@
  
         function drawHorizontalAxisTicks() {
             var deltaY;
-            for (var i = 1; i < NUM_HORIZONTAL_TICKS; i++) {
+            for (var i =-1*NUM_HORIZONTAL_TICKS +3; i < NUM_HORIZONTAL_TICKS; i++) {
                 context.beginPath();
                 //判断画的是大坐标还是短坐标
                 if (i % 5 == 0) {
@@ -84,10 +84,10 @@
             }
         }
         
-        //绘制数值的小标
+        //绘制竖直的小标
         function drawVerticalAxisTicks() {
             var deltaX;
-            for (var i = 1; i < NUM_VERTICAL_TICKS; i++) {
+            for (var i =-1* NUM_VERTICAL_TICKS+2; i < NUM_VERTICAL_TICKS; i++) {
                 context.beginPath();
                 if (i % 5 === 0) {
                     deltaX = TICK_WIDTH;
@@ -108,9 +108,9 @@
             context.moveTo(AXIS_ORIGIN.x, canvas.height-50);////context.moveTo(AXIS_ORIGIN.x, AXIS_ORIGIN.y);////VERTICAL_AXIS_MARGIN
             context.lineTo(AXIS_ORIGIN.x, AXIS_TOP);
 //箭头
-            context.lineTo(AXIS_ORIGIN.x-10, AXIS_TOP+20);
+            context.lineTo(AXIS_ORIGIN.x-5, AXIS_TOP+10);
             context.moveTo(AXIS_ORIGIN.x, AXIS_TOP);
-            context.lineTo(AXIS_ORIGIN.x+10, AXIS_TOP+20);
+            context.lineTo(AXIS_ORIGIN.x+5, AXIS_TOP+10);
             context.strokeStyle = '#00f';
 
             context.stroke();
@@ -123,9 +123,9 @@
             context.lineTo(AXIS_RIGHT, AXIS_ORIGIN.y);
             
         //箭头
-            context.lineTo(AXIS_RIGHT-20, AXIS_ORIGIN.y-10);
+            context.lineTo(AXIS_RIGHT-10, AXIS_ORIGIN.y-5);
             context.moveTo(AXIS_RIGHT, AXIS_ORIGIN.y);
-            context.lineTo(AXIS_RIGHT-20, AXIS_ORIGIN.y+10);
+            context.lineTo(AXIS_RIGHT-10, AXIS_ORIGIN.y+5);
 
             //ctx.lineJoin = 'miter'; //线的连接处采用尖角
             //ctx.lineJoin = 'bevel'; //线的连接处采用方角
@@ -148,7 +148,17 @@
         function drawVerticalAxisLabels() {
             context.textAlign = "center";
             context.textBaseline = "top";
-            for (var i = 0; i <= NUM_HORIZONTAL_TICKS; i++) {
+            for (var i = 1; i <= NUM_HORIZONTAL_TICKS; i++) {
+                if (i % 5 === 0) {
+                    context.fillText(i,
+                        AXIS_ORIGIN.x + i * a,
+                        AXIS_ORIGIN.y + SPACE_BETWEEN_ABELS_AND_AXIS);
+                }
+            }
+            context.fillText(0,
+                AXIS_ORIGIN.x - a,
+                AXIS_ORIGIN.y + SPACE_BETWEEN_ABELS_AND_AXIS);
+            for (var i = -1; i >= -1* NUM_HORIZONTAL_TICKS; i--) {
                 if (i % 5 === 0) {
                     context.fillText(i,
                         AXIS_ORIGIN.x + i * a,
@@ -161,7 +171,14 @@
         function drawHorizontalAxisLabels() {
             context.textAlign = "center";
             context.textBaseline = "middle";
-            for (var i = 0; i <= NUM_VERTICAL_TICKS; i++) {
+            for (var i = 1; i <= NUM_VERTICAL_TICKS; i++) {
+                if (i % 5 === 0) {
+                    context.fillText(i,
+                        AXIS_ORIGIN.x - SPACE_BETWEEN_ABELS_AND_AXIS,
+                        AXIS_ORIGIN.y - i * b);
+                }
+            }
+            for (var i = -1; i >= -1* NUM_VERTICAL_TICKS; i--) {
                 if (i % 5 === 0) {
                     context.fillText(i,
                         AXIS_ORIGIN.x - SPACE_BETWEEN_ABELS_AND_AXIS,
@@ -190,6 +207,23 @@
             }
             context.restore();
         }
+
+
+////////////////////////
+        function DrawP(Canvas,P)
+        {
+        //在点P处画一个点
+        with (Canvas)
+                {
+                moveTo(P[0],P[1]);
+                lineTo(P[0]+1,P[1]+1);
+                }
+        }
+////////////////////////
+context.lineWidth = 20;
+DrawP(context,AXIS_ORIGIN)
+////////////////////////
+
         context.font = "13px Arial";
         
         drawGrid("lightgray", a, b);
