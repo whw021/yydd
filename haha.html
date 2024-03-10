@@ -1,16 +1,23 @@
 <html>
 <head>
 <title>点击图片播放音乐</title>
+<style>
+body {margin: 0; padding: 0;}
+image-container {width : 100%;}
+.image-container img{width : 100%; height: atuo;}
+</style>
 </head>
+
+
 <body>
 
-<center>
-<img src="播放1.png" onclick="image1()">
+
+<div class="image-container"><img src="播放1.png" onclick="image1()"></div>
 <audio src="群笑.mp3" id="yinyue1"></audio>
 <BR>
-<img src="播放2.png" onclick="image2()">
+<div class="image-container"><img src="播放2.png" onclick="image2()"></div>
 <audio src="鼓掌.mp3" id="yinyue2"></audio>
-</center>
+
 
 <script>
 function image1(){
