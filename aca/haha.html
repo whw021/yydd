@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>点击图片播放音乐</title>
+<style>
+body {margin: 0; padding: 0;}
+image-container {width : 100%;}
+.image-container img{width : 100%; height: atuo;}
+</style>
+</head>
+
+
+<body>
+
+
+<div class="image-container"><img src="播放1.png" onclick="image1()"></div>
+<audio src="群笑.mp3" id="yinyue1"></audio>
+<BR>
+<div class="image-container"><img src="播放2.png" onclick="image2()"></div>
+<audio src="鼓掌.mp3" id="yinyue2"></audio>
+
+
+<script>
+function image1(){
+var yinyue1=document.getElementById('yinyue1')
+yinyue1.play()
+}
+function image2(){
+var yinyue2=document.getElementById('yinyue2')
+yinyue2.play()
+}
+
+</script>
+
+<!--
+<br>
+<center>
+<audio controls>
+  <source src="群笑.mp3" type="audio/mpeg">
+</audio>
+</center>
+<br>
+<center>
+<audio controls>
+  <source src="鼓掌.mp3" type="audio/mpeg">
+</audio>
+</center>
+//-->
+
+
+
+</body>
+</html>
