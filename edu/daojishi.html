@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>冲！冲！冲！加油！！！</title>
+</head>
+<body onload="startCountdown(0);">
+  <h3>初中学业水平考试</h3>
+  <h2><div id="countdown-display"></div></h2>
+<table>
+  <tr>  <td><h3>语文</h3></td>                                                         <td><h3>2024年6月15日9:00~10:40</h3></td><br> </tr>
+  <tr>  <td><h3>综合测试（物理、化学、跨学科）</h3></td>          <td><h3>2024年6月15日14:00~16:00</h3></td><br> </tr>
+  <tr> <td>----------------------------------------------------------</td>          <td>------------------------------------------------</td> </tr>
+  <tr>  <td><h3>外语（含听力）</h3></td>                                       <td><h3>2024年6月16日9:00~10:30</h3></td><br> </tr>
+  <tr>  <td><h3>数学</h3></td>                                                         <td><h3>2024年6月16日14:00~15:40</h3></td><br> </tr>
+  <tr>  <td><h3>道德与法治（开卷）</h3></td>                               <td><h3>2024年6月16日16:30~17:10</h3></td><br> </tr>
+</table>
+
+  <script>
+    // 获取页面元素
+    var countdownDisplay = document.getElementById("countdown-display");
+    // 定义变量
+    var countdownInterval;
+    var timeRemaining;
+    // 启动倒计时
+    function startCountdown(timeInSeconds) {
+      // 计算倒计时结束时间
+      //var endTime = Date.now() + timeInSeconds * 1000;
+      var date = new Date('2024-06-15 09:00:00');
+      var endTime = date.getTime() + timeInSeconds * 1000;
+      //var endTime = Date.now() + timeInSeconds * 1000;
+      // 更新倒计时显示
+      updateCountdownDisplay(endTime);
+      // 每秒更新倒计时显示
+      countdownInterval = setInterval(function () {
+        updateCountdownDisplay(endTime);
+      }, 1000);
+    }
+    // 更新倒计时显示
+    function updateCountdownDisplay(endTime) {
+      // 计算剩余时间
+      timeRemaining = Math.floor((endTime - Date.now()) / 1000);
+      var rdate = new Date(timeRemaining * 1000);
+      D = rdate.getDate() + ' 天 ';
+      h = rdate.getHours() + ' 小时 ';
+      m = rdate.getMinutes() + ' 分 ';
+      s = rdate.getSeconds() + ' 秒 ';
+
+      DHMS = (D+h+m+s);
+
+      // 倒计时结束
+      if (timeRemaining <= 0) {
+        clearInterval(countdownInterval);
+        countdownDisplay.innerHTML = "倒计时结束!";
+        return;
+      }
+      // 更新倒计时显示
+      countdownDisplay.innerHTML = "剩余: " + timeRemaining + " 秒 👉"+DHMS;
+    }
+  </script>
+</body>
+</html>
