@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!--<meta charset="UTF-8">-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>å†²ï¼å†²ï¼å†²ï¼åŠ æ²¹ï¼ï¼ï¼</title>
+  <title>³å£¡³å£¡³å£¡¼ÓÓÍ£¡£¡£¡</title>
 </head>
 <body onload="startCountdown(0);">
-  <h3>åˆä¸­å­¦ä¸šæ°´å¹³è€ƒè¯•</h3>
-  <h2><div id="countdown-display"></div></h2>
-<table>
-  <tr>  <td><h3>è¯­æ–‡</h3></td>                                                         <td><h3>2024å¹´6æœˆ15æ—¥9:00~10:40</h3></td><br> </tr>
-  <tr>  <td><h3>ç»¼åˆæµ‹è¯•ï¼ˆç‰©ç†ã€åŒ–å­¦ã€è·¨å­¦ç§‘ï¼‰</h3></td>          <td><h3>2024å¹´6æœˆ15æ—¥14:00~16:00</h3></td><br> </tr>
-  <tr> <td>----------------------------------------------------------</td>          <td>------------------------------------------------</td> </tr>
-  <tr>  <td><h3>å¤–è¯­ï¼ˆå«å¬åŠ›ï¼‰</h3></td>                                       <td><h3>2024å¹´6æœˆ16æ—¥9:00~10:30</h3></td><br> </tr>
-  <tr>  <td><h3>æ•°å­¦</h3></td>                                                         <td><h3>2024å¹´6æœˆ16æ—¥14:00~15:40</h3></td><br> </tr>
-  <tr>  <td><h3>é“å¾·ä¸æ³•æ²»ï¼ˆå¼€å·ï¼‰</h3></td>                               <td><h3>2024å¹´6æœˆ16æ—¥16:30~17:10</h3></td><br> </tr>
+<table> 
+  <tr><td> <h3>³õÖĞÑ§ÒµË®Æ½¿¼ÊÔ</h3></td>         <td>  <h2><font color="red"><div id="countdown-display"></div></font></h2></td></tr>
+  <tr> <td>-------------------------------------------</td>          <td>---------------------------------------</td> </tr>
+  <tr>  <td><h3>ÓïÎÄ</h3></td>                                                         <td><h3>2024Äê6ÔÂ15ÈÕ9:00~10:40</h3></td> </tr>
+  <tr>  <td><h3>×ÛºÏ²âÊÔ£¨ÎïÀí¡¢»¯Ñ§¡¢¿çÑ§¿Æ£©</h3></td>          <td><h3>2024Äê6ÔÂ15ÈÕ14:00~16:00</h3></td></tr>
+  <tr> <td>-------------------------------------------</td>          <td>---------------------------------------</td> </tr>
+  <tr>  <td><h3>ÍâÓï£¨º¬ÌıÁ¦£©</h3></td>                                       <td><h3>2024Äê6ÔÂ16ÈÕ9:00~10:30</h3></td> </tr>
+  <tr>  <td><h3>ÊıÑ§</h3></td>                                                         <td><h3>2024Äê6ÔÂ16ÈÕ14:00~15:40</h3></td> </tr>
+  <tr>  <td><h3>µÀµÂÓë·¨ÖÎ£¨¿ª¾í£©</h3></td>                               <td><h3>2024Äê6ÔÂ16ÈÕ16:30~17:10</h3></td> </tr>
+  <tr> <td>-------------------------------------------</td>          <td>---------------------------------------</td> </tr>
 </table>
 
   <script>
-    // è·å–é¡µé¢å…ƒç´ 
+    // »ñÈ¡Ò³ÃæÔªËØ
     var countdownDisplay = document.getElementById("countdown-display");
-    // å®šä¹‰å˜é‡
+    // ¶¨Òå±äÁ¿
     var countdownInterval;
     var timeRemaining;
-    // å¯åŠ¨å€’è®¡æ—¶
+    // Æô¶¯µ¹¼ÆÊ±
     function startCountdown(timeInSeconds) {
-      // è®¡ç®—å€’è®¡æ—¶ç»“æŸæ—¶é—´
+      // ¼ÆËãµ¹¼ÆÊ±½áÊøÊ±¼ä
       //var endTime = Date.now() + timeInSeconds * 1000;
       var date = new Date('2024-06-15 09:00:00');
       var endTime = date.getTime() + timeInSeconds * 1000;
       //var endTime = Date.now() + timeInSeconds * 1000;
-      // æ›´æ–°å€’è®¡æ—¶æ˜¾ç¤º
+      // ¸üĞÂµ¹¼ÆÊ±ÏÔÊ¾
       updateCountdownDisplay(endTime);
-      // æ¯ç§’æ›´æ–°å€’è®¡æ—¶æ˜¾ç¤º
+      // Ã¿Ãë¸üĞÂµ¹¼ÆÊ±ÏÔÊ¾
       countdownInterval = setInterval(function () {
         updateCountdownDisplay(endTime);
       }, 1000);
     }
-    // æ›´æ–°å€’è®¡æ—¶æ˜¾ç¤º
+    // ¸üĞÂµ¹¼ÆÊ±ÏÔÊ¾
     function updateCountdownDisplay(endTime) {
-      // è®¡ç®—å‰©ä½™æ—¶é—´
+      // ¼ÆËãÊ£ÓàÊ±¼ä
       timeRemaining = Math.floor((endTime - Date.now()) / 1000);
       var rdate = new Date(timeRemaining * 1000);
-      D = rdate.getDate() + ' å¤© ';
-      h = rdate.getHours() + ' å°æ—¶ ';
-      m = rdate.getMinutes() + ' åˆ† ';
-      s = rdate.getSeconds() + ' ç§’ ';
+      D = rdate.getDate() + ' Ìì ';
+      h = rdate.getHours() + ' Ğ¡Ê± ';
+      m = rdate.getMinutes() + ' ·Ö ';
+      s = rdate.getSeconds() + ' Ãë ';
 
       DHMS = (D+h+m+s);
 
-      // å€’è®¡æ—¶ç»“æŸ
+      // µ¹¼ÆÊ±½áÊø
       if (timeRemaining <= 0) {
         clearInterval(countdownInterval);
-        countdownDisplay.innerHTML = "å€’è®¡æ—¶ç»“æŸ!";
+        countdownDisplay.innerHTML = "µ¹¼ÆÊ±½áÊø!";
         return;
       }
-      // æ›´æ–°å€’è®¡æ—¶æ˜¾ç¤º
-      countdownDisplay.innerHTML = "å‰©ä½™: " + timeRemaining + " ç§’ ğŸ‘‰"+DHMS;
+      // ¸üĞÂµ¹¼ÆÊ±ÏÔÊ¾
+      //countdownDisplay.innerHTML = "Ê£Óà: " + timeRemaining + " Ãë ??"+DHMS;
+      countdownDisplay.innerHTML = "Ê£Óà: "  +DHMS;
+
     }
   </script>
 </body>
