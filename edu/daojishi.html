@@ -1,64 +1,64 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="GBK">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>³å£¡³å£¡³å£¡¼ÓÓÍ£¡£¡£¡</title>
+  <title>å†²ï¼å†²ï¼å†²ï¼åŠ æ²¹ï¼ï¼ï¼</title>
 </head>
 <body onload="startCountdown(0);">
 <table> 
-  <tr><td> <h3>³õÖĞÑ§ÒµË®Æ½¿¼ÊÔ</h3></td>         <td>  <h2><font color="red"><div id="countdown-display"></div></font></h2></td></tr>
+  <tr><td> <h3>åˆä¸­å­¦ä¸šæ°´å¹³è€ƒè¯•</h3></td>         <td>  <h2><font color="red"><div id="countdown-display"></div></font></h2></td></tr>
   <tr> <td>-------------------------------------------</td>          <td>---------------------------------------</td> </tr>
-  <tr>  <td><h3>ÓïÎÄ</h3></td>                                                         <td><h3>2024Äê6ÔÂ15ÈÕ9:00~10:40</h3></td> </tr>
-  <tr>  <td><h3>×ÛºÏ²âÊÔ£¨ÎïÀí¡¢»¯Ñ§¡¢¿çÑ§¿Æ£©</h3></td>          <td><h3>2024Äê6ÔÂ15ÈÕ14:00~16:00</h3></td></tr>
+  <tr>  <td><h3>è¯­æ–‡</h3></td>                                                         <td><h3>2024å¹´6æœˆ15æ—¥9:00~10:40</h3></td> </tr>
+  <tr>  <td><h3>ç»¼åˆæµ‹è¯•ï¼ˆç‰©ç†ã€åŒ–å­¦ã€è·¨å­¦ç§‘ï¼‰</h3></td>          <td><h3>2024å¹´6æœˆ15æ—¥14:00~16:00</h3></td></tr>
   <tr> <td>-------------------------------------------</td>          <td>---------------------------------------</td> </tr>
-  <tr>  <td><h3>ÍâÓï£¨º¬ÌıÁ¦£©</h3></td>                                       <td><h3>2024Äê6ÔÂ16ÈÕ9:00~10:30</h3></td> </tr>
-  <tr>  <td><h3>ÊıÑ§</h3></td>                                                         <td><h3>2024Äê6ÔÂ16ÈÕ14:00~15:40</h3></td> </tr>
-  <tr>  <td><h3>µÀµÂÓë·¨ÖÎ£¨¿ª¾í£©</h3></td>                               <td><h3>2024Äê6ÔÂ16ÈÕ16:30~17:10</h3></td> </tr>
+  <tr>  <td><h3>å¤–è¯­ï¼ˆå«å¬åŠ›ï¼‰</h3></td>                                       <td><h3>2024å¹´6æœˆ16æ—¥9:00~10:30</h3></td> </tr>
+  <tr>  <td><h3>æ•°å­¦</h3></td>                                                         <td><h3>2024å¹´6æœˆ16æ—¥14:00~15:40</h3></td> </tr>
+  <tr>  <td><h3>é“å¾·ä¸æ³•æ²»ï¼ˆå¼€å·ï¼‰</h3></td>                               <td><h3>2024å¹´6æœˆ16æ—¥16:30~17:10</h3></td> </tr>
   <tr> <td>-------------------------------------------</td>          <td>---------------------------------------</td> </tr>
 </table>
 
   <script>
-    // »ñÈ¡Ò³ÃæÔªËØ
+    // è·å–é¡µé¢å…ƒç´ 
     var countdownDisplay = document.getElementById("countdown-display");
-    // ¶¨Òå±äÁ¿
+    // å®šä¹‰å˜é‡
     var countdownInterval;
     var timeRemaining;
-    // Æô¶¯µ¹¼ÆÊ±
+    // å¯åŠ¨å€’è®¡æ—¶
     function startCountdown(timeInSeconds) {
-      // ¼ÆËãµ¹¼ÆÊ±½áÊøÊ±¼ä
+      // è®¡ç®—å€’è®¡æ—¶ç»“æŸæ—¶é—´
       //var endTime = Date.now() + timeInSeconds * 1000;
       var date = new Date('2024-06-15 09:00:00');
       var endTime = date.getTime() + timeInSeconds * 1000;
       //var endTime = Date.now() + timeInSeconds * 1000;
-      // ¸üĞÂµ¹¼ÆÊ±ÏÔÊ¾
+      // æ›´æ–°å€’è®¡æ—¶æ˜¾ç¤º
       updateCountdownDisplay(endTime);
-      // Ã¿Ãë¸üĞÂµ¹¼ÆÊ±ÏÔÊ¾
+      // æ¯ç§’æ›´æ–°å€’è®¡æ—¶æ˜¾ç¤º
       countdownInterval = setInterval(function () {
         updateCountdownDisplay(endTime);
       }, 1000);
     }
-    // ¸üĞÂµ¹¼ÆÊ±ÏÔÊ¾
+    // æ›´æ–°å€’è®¡æ—¶æ˜¾ç¤º
     function updateCountdownDisplay(endTime) {
-      // ¼ÆËãÊ£ÓàÊ±¼ä
+      // è®¡ç®—å‰©ä½™æ—¶é—´
       timeRemaining = Math.floor((endTime - Date.now()) / 1000);
       var rdate = new Date(timeRemaining * 1000);
-      D = rdate.getDate() + ' Ìì ';
-      h = rdate.getHours() + ' Ğ¡Ê± ';
-      m = rdate.getMinutes() + ' ·Ö ';
-      s = rdate.getSeconds() + ' Ãë ';
+      D = rdate.getDate() + ' å¤© ';
+      h = rdate.getHours() + ' å°æ—¶ ';
+      m = rdate.getMinutes() + ' åˆ† ';
+      s = rdate.getSeconds() + ' ç§’ ';
 
       DHMS = (D+h+m+s);
 
-      // µ¹¼ÆÊ±½áÊø
+      // å€’è®¡æ—¶ç»“æŸ
       if (timeRemaining <= 0) {
         clearInterval(countdownInterval);
-        countdownDisplay.innerHTML = "µ¹¼ÆÊ±½áÊø!";
+        countdownDisplay.innerHTML = "å€’è®¡æ—¶ç»“æŸ!";
         return;
       }
-      // ¸üĞÂµ¹¼ÆÊ±ÏÔÊ¾
-      //countdownDisplay.innerHTML = "Ê£Óà: " + timeRemaining + " Ãë ??"+DHMS;
-      countdownDisplay.innerHTML = "Ê£Óà: "  +DHMS;
+      // æ›´æ–°å€’è®¡æ—¶æ˜¾ç¤º
+      //countdownDisplay.innerHTML = "å‰©ä½™: " + timeRemaining + " ç§’ ??"+DHMS;
+      countdownDisplay.innerHTML = "å‰©ä½™: "  +DHMS;
 
     }
   </script>
